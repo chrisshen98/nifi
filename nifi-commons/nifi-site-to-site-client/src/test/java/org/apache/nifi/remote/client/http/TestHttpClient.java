@@ -90,6 +90,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
@@ -600,7 +601,7 @@ public class TestHttpClient {
     }
 
     private static class DataPacketBuilder {
-        private final Map<String, String> attributes = new HashMap<>();
+        private final Map<String, String> attributes = new LinkedHashMap<>();
         private String contents;
 
         private DataPacketBuilder attr(final String k, final String v) {
@@ -952,7 +953,7 @@ public class TestHttpClient {
     private static void testSendLargeFile(SiteToSiteClient client) throws IOException {
 
         testSendIgnoreProxyError(client, transaction -> {
-            serverChecksum = "1527414060";
+            serverChecksum = "2387509971";
 
             final int contentSize = 10_000;
             final StringBuilder sb = new StringBuilder(contentSize);
